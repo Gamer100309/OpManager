@@ -1,0 +1,27 @@
+name: OpManager
+version: 4.0
+main: RedCity_Industries.opmanager.OpManagerPlugin
+api-version: '1.21'
+author: RedCity Industries | Gamer100309
+description: A safe OP management plugin that saves and restores player data (inventory, position, gamemode, etc.) when granting temporary operator permissions.
+
+commands:
+  opon:
+    description: Grants OP and saves your current player data (inventory, position, gamemode, etc.)
+    usage: /opon
+    aliases: [op-on, enableop]
+
+  opoff:
+    description: Removes OP and restores your saved player data. Optionally disables vanish if configured.
+    usage: /opoff
+    aliases: [op-off, disableop]
+
+  opreturnback:
+    description: Teleports you back to the location where you used /opon (without removing OP)
+    usage: /opreturnback
+    aliases: [opreturn, opback]
+
+  opRestoreInventory:
+    description: Restores your saved inventory, armor, XP, health, hunger, and effects (without removing OP or changing position)
+    usage: /opRestoreInventory
+    aliases: [oprestore, opinv]

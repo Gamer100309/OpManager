@@ -1,0 +1,168 @@
+# ==============================
+# OpManager by RedCity Industries
+# Version 4.0
+# ==============================
+
+# ==============================
+# General Settings
+# ==============================
+
+# Language for plugin messages
+# Available languages: en (English), de (Deutsch)
+# The corresponding messages file must exist: messages_en.yml or messages_de.yml
+#
+# HOW TO ADD MORE LANGUAGES:
+# 1. Copy an existing messages file (e.g., messages_en.yml)
+# 2. Rename it to messages_<language_code>.yml (e.g., messages_fr.yml for French)
+# 3. Translate all messages inside the file
+# 4. Set the language here to your new language code (e.g., language: fr)
+# 5. Reload the plugin with /reload or restart the server
+language: de
+
+# Enable verbose logging (detailed debug information in console)
+# true = Show detailed logs (useful for debugging)
+# false = Show only essential logs (recommended for production)
+verbose_logging: false
+
+# ==============================
+# IMPORTANT WARNING - ITEM DUPLICATION
+# ==============================
+#
+# If you die during an active OP session (after using /opon),
+# your items will drop at your death location.
+# When you use /opoff afterwards, your saved items will be restored.
+# This means you can pick up the dropped items AND have your saved items,
+# resulting in ITEM DUPLICATION!
+#
+# To prevent duplication:
+# - Use /opoff FIRST (restores your saved items)
+# - Then decide if you want to pick up the dropped items
+# - Or simply ignore the dropped items
+#
+# ADDITIONAL RISK:
+# If you pick up another player's items during your OP session and then die,
+# those items will drop and might be lost!
+# Be extra careful when helping other players during OP sessions!
+
+# ==============================
+# Vanish Plugin Settings
+# ==============================
+
+# Automatically disable vanish when running /opoff command.
+# true = Vanish will be disabled automatically
+# false = Vanish remains active (recommended if unsure)
+#
+# ⚠️ CRITICAL WARNING - TOGGLE COMMANDS:
+# If your vanish plugin uses a TOGGLE command (turns vanish on/off with the same command),
+# setting this to TRUE can cause unwanted behavior:
+#
+# Example Problem:
+# 1. You are NOT in vanish mode
+# 2. You run /opoff
+# 3. The plugin executes the vanish command
+# 4. Result: Vanish gets ACTIVATED instead of deactivated!
+#
+# SOLUTION:
+# - Set this to FALSE if your plugin uses toggle commands
+# - Only set it to TRUE if your vanish plugin has a dedicated "turn OFF" command
+#
+# Examples of SAFE commands (dedicated OFF commands):
+#   - "vanish off {player}" (if plugin supports "off" parameter)
+#   - "vanish disable {player}" (if plugin supports "disable" parameter)
+#   - "sv off {player}" (SuperVanish with explicit OFF)
+#
+# Examples of UNSAFE commands (toggle commands):
+#   - "vanish {player}" (toggles vanish on/off - RISKY!)
+#   - "vanishium:vium {player}" (VanishIUM toggle - RISKY!)
+#   - "v {player}" (most plugins - RISKY!)
+#
+# If you're unsure, leave this set to FALSE!
+auto_disable_vanish: false
+
+# Command to disable vanish (without leading slash)
+# Use {player} as placeholder for the player name
+# This is only used if auto_disable_vanish is set to true!
+#
+# Examples:
+#   - "vanishium:vium {player}" (VanishIUM toggle)
+#   - "vanish off {player}" (if your plugin supports "off")
+#   - "sv off {player}" (SuperVanish)
+vanish_disable_command: "vanishium:vium {player}"
+
+# ==============================
+# Inventory and Gamemode Settings
+# ==============================
+
+# Should the player's inventory be saved when they run /opon?
+# If false, only position and gamemode are saved.
+# true = Save inventory, armor, offhand, XP, health, hunger, effects
+# false = Save only position and gamemode
+inventory_save: true
+
+# ==============================
+# OP Whitelist Settings
+# ==============================
+
+# Enable or disable the whitelist for /opon command.
+# true = Only players listed below can use /opon and related commands
+# false = ANY player can use /opon and gain OP permissions!
+#
+# ⚠️ SECURITY WARNING:
+# If whitelist_enabled is set to false, ANY player can use:
+# - /opon (grant themselves OP)
+# - /opoff (remove OP and restore data)
+# - /opreturnback (teleport to saved position)
+# - /opRestoreInventory (restore saved inventory)
+#
+# This essentially gives everyone on your server the ability to grant themselves OP!
+#
+# SECURITY RECOMMENDATION:
+# Keep this set to TRUE unless you trust ALL players on your server!
+whitelist_enabled: true
+
+# List of player names allowed to gain OP via /opon.
+# Add exact Minecraft usernames (case-sensitive).
+#
+# HOW TO ADD PLAYERS TO THE WHITELIST:
+# 1. Make sure whitelist_enabled is set to true (see above)
+# 2. Add player names below with a dash (-) and space before each name
+# 3. Player names are case-sensitive (must match exactly!)
+# 4. Save the file and reload with /reload or restart the server
+#
+# Example with multiple players:
+# whitelist:
+#   - Gamer100309
+#   - AnotherAdmin
+#   - TrustedModerator
+#   - BuilderName
+whitelist:
+  - Placeholder👑User
+
+# ==============================
+# Data Storage Strategy
+# ==============================
+
+# Choose how player data (inventory, XP, position, etc.) is stored:
+#
+# MEMORY_ONLY:
+#   - Data is saved only in RAM (fastest performance)
+#   - ⚠️ WARNING: Data will be LOST on server crash, restart, or reload!
+#   - ⚠️ WARNING: Data will be LOST if player disconnects!
+#   - Use only for testing or if you accept the risk of data loss
+#
+# DISK_ONLY:
+#   - Data is saved only to disk (safe from crashes/restarts)
+#   - Slightly slower than MEMORY_ONLY, but still fast
+#   - Files are automatically deleted after /opoff
+#   - Recommended for servers with frequent restarts
+#
+# DISK_AND_MEMORY:
+#   - Data is saved in both RAM and on disk (best of both worlds)
+#   - Fast access from RAM with disk backup for safety
+#   - Disk files are automatically deleted after /opoff
+#   - Recommended for most servers (balanced performance + safety)
+#
+# NOTE: Disk files in 'plugins/OpManager/playerdata/' are temporary!
+#       They are automatically deleted when you run /opoff.
+#       Only active OP sessions are stored on disk.
+storage_strategy: DISK_AND_MEMORY

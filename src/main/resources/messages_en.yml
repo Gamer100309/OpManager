@@ -1,0 +1,224 @@
+# ==============================
+# OpManager - English Messages
+# Version 4.0
+# ==============================
+
+# General messages
+general:
+  console-only: "§cThis command can only be executed by players!"
+  no-permission: "§cYou don't have permission for this command!"
+  reload-success: "§aOpManager has been reloaded!"
+
+# /opon Command
+opon:
+  already-op: "§cYou already have OP!"
+  whitelist-disabled: "§cYou are not on the whitelist and cannot use this command!"
+  success-full:
+    - "§a§l✓ Data saved and OP activated!"
+    - "§7Inventory: §eSaved"
+    - "§7Armor & Offhand: §eSaved"
+    - "§7Position: §eSaved"
+    - "§7Gamemode: §eSaved"
+    - "§7XP: §eSaved"
+    - "§7Health & Hunger: §eSaved"
+    - "§7Effects: §eSaved"
+    - ""
+    - "§7Use §e/opoff §7to restore everything."
+  success-minimal:
+    - "§a§l✓ Position & Gamemode saved, OP activated!"
+    - "§7Position: §eSaved"
+    - "§7Gamemode: §eSaved"
+    - ""
+    - "§e⚠ Inventory saving is disabled (inventory_save: false)"
+    - "§7Only position and gamemode will be restored on §e/opoff§7."
+
+# /opoff Command
+opoff:
+  no-op: "§cYou don't have OP!"
+  no-data-found:
+    - "§e⚠ No saved data found!"
+    - "§7You didn't use §e/opon §7or OP was given externally."
+    - "§aOP was removed anyway."
+  vanish-disabled: "§7Vanish was disabled."
+  success-full:
+    - "§a§l✓ OP removed and data restored!"
+    - "§7Inventory: §aRestored"
+    - "§7Armor & Offhand: §aRestored"
+    - "§7Position: §aRestored"
+    - "§7Gamemode: §aRestored"
+    - "§7XP: §aRestored"
+    - "§7Health & Hunger: §aRestored"
+    - "§7Effects: §aRestored"
+  success-minimal:
+    - "§a§l✓ OP removed!"
+    - "§7Position: §aRestored"
+    - "§7Gamemode: §aRestored"
+    - ""
+    - "§e⚠ Inventory was not restored (inventory_save: false)"
+
+# /opreturnback Command
+returnback:
+  no-permission-whitelist: "§cYou are not on the whitelist and cannot use this command!"
+  no-data:
+    - "§cNo saved data found!"
+    - "§7You didn't use §e/opon §7or data was already deleted by §e/opoff§7."
+  error-loading: "§cError loading data! Contact an administrator."
+  success:
+    - "§a✓ You were teleported to your saved position!"
+    - "§7World: §e{world}"
+    - "§7Position: §e{x} / {y} / {z}"
+    - ""
+    - "§7You still have OP. Use §e/opoff §7to remove OP and restore everything."
+
+# /opRestoreInventory Command
+restore:
+  no-op: "§cYou don't have OP! Use §e/opon §cfirst."
+  inventory-disabled:
+    - "§c⚠ Inventory saving is disabled!"
+    - ""
+    - "§7The config option §einventory_save §7is set to §cfalse§7."
+    - "§7No inventory data was saved."
+    - ""
+    - "§7What was saved:"
+    - "§7 • Position (use §e/opreturnback§7)"
+    - "§7 • Gamemode (will be restored on §e/opoff§7)"
+  no-data:
+    - "§cNo saved data found!"
+    - "§7You didn't use §e/opon§7."
+  error-loading: "§cError loading data! Contact an administrator."
+  success:
+    - "§a§l✓ Inventory and player status restored!"
+    - "§7Inventory: §aRestored"
+    - "§7Armor & Offhand: §aRestored"
+    - "§7XP: §aRestored"
+    - "§7Health & Hunger: §aRestored"
+    - "§7Effects: §aRestored"
+    - ""
+    - "§7Position & Gamemode remain unchanged."
+    - "§7You still have OP. Use §e/opoff §7to remove OP."
+
+# Death Event
+death:
+  warning:
+    - ""
+    - "§c§l⚠ ⚠ ⚠ ITEM DUPLICATION POSSIBLE ⚠ ⚠ ⚠"
+    - ""
+    - "§7You died during an active §eOP session§7!"
+    - "§7Your items are at your death location:"
+    - "§e  → {world} {x} / {y} / {z}"
+    - ""
+    - "§c⚠ If you use §e/opoff §cAND pick up the items,"
+    - "§c⚠ your items will be §lDUPLICATED§c!"
+    - ""
+    - "§aRecommended procedure:"
+    - "§71. Use §e/opoff §7FIRST (restores your saved items)"
+    - "§72. Then decide:"
+    - "§7   - Ignore items on ground (§ano dupe§7)"
+    - "§7   - Or pick them up (§cintentional dupe§7)"
+    - ""
+    - "§c⚠ ADDITIONAL WARNING:"
+    - "§7If you picked up items from other players,"
+    - "§7those items might be lost now!"
+    - ""
+
+# Console Logs
+logs:
+  data-saved: "Data saved for {player}!"
+  data-saved-minimal: "Position & Gamemode saved for {player} (inventory_save: false)"
+  data-restored: "Data restored for {player}!"
+  data-restored-minimal: "Position & Gamemode restored for {player} (inventory_save: false)"
+  op-removed-no-data: "OP removed from {player} (without data restoration - no saved data found)"
+  returned: "{player} teleported to saved position (opreturnback)"
+  inventory-restored: "Inventory status restored for {player} (opRestoreInventory)"
+  death-warning: "ITEM DUPLICATION RISK! {player} died during OP session at {world} {x}/{y}/{z}"
+  vanish-disabled: "Vanish disabled for {player}"
+
+  # Storage Manager Logs:
+  data-saved-memory: "Data of {player} saved in RAM (MEMORY_ONLY)"
+  data-saved-disk: "Data of {player} saved on disk (DISK_ONLY)"
+  data-saved-both: "Data of {player} saved in RAM & disk (DISK_AND_MEMORY)"
+  data-file-deleted: "Data file of {player} deleted"
+  storage-strategy: "Storage strategy: {strategy}"
+
+# Plugin Startup/Shutdown Messages
+plugin:
+  loading: "OpManager by RedCity Industries is loading..."
+  disk-storage-info:
+    - "Player data will be saved to disk."
+    - "Files will be automatically deleted after /opoff."
+  started: "OpManager successfully started!"
+  stopping: "OpManager by RedCity Industries is shutting down..."
+
+# Verbose Logging (only visible when verbose_logging: true)
+verbose:
+  # OpOnCommand
+  save-start: "=== SAVING START ==="
+  save-end: "=== SAVING END ==="
+  inventory-save-enabled: "inventory_save: true - Inventory will be saved"
+  inventory-save-disabled: "inventory_save: false - ONLY Position & Gamemode will be saved"
+
+  copying-inventory: "1. Copying inventory..."
+  inventory-item-count: "   - Number of items in inventory: {count}"
+
+  copying-armor: "2. Copying armor..."
+  armor-helmet: "   - Helmet: {type}"
+  armor-chestplate: "   - Chestplate: {type}"
+  armor-leggings: "   - Leggings: {type}"
+  armor-boots: "   - Boots: {type}"
+
+  copying-offhand: "3. Copying offhand..."
+  offhand-item: "   - Offhand: {type}"
+
+  saving-xp: "4. Saving XP..."
+  xp-details: "   - Level: {level}, Exp: {exp}"
+
+  saving-health: "5. Saving health..."
+  health-value: "   - Health: {health}"
+
+  saving-hunger: "6. Saving hunger..."
+  hunger-details: "   - FoodLevel: {food}, Saturation: {saturation}"
+
+  saving-effects: "7. Saving effects..."
+  effects-count: "   - Number of effects: {count}"
+
+  copying-location: "Copying location..."
+  location-details: "   - Position: {world} {x}/{y}/{z}"
+
+  saving-gamemode: "Saving gamemode..."
+  gamemode-value: "   - Gamemode: {gamemode}"
+
+  creating-playerdata: "Creating PlayerData object..."
+  storing-in-manager: "Storing in StorageManager..."
+
+  # OpOffCommand
+  restore-start: "=== RESTORATION START ==="
+  restore-end: "=== RESTORATION END ==="
+  restore-end-minimal: "=== RESTORATION END (only Position & Gamemode) ==="
+
+  clearing-inventory: "1. Clearing inventory"
+  restoring-location: "2. Restoring location"
+  location-world: "   - World: {world}"
+  restoring-gamemode: "3. Restoring gamemode"
+
+  restoring-armor: "4. Setting armor"
+  restoring-offhand: "5. Setting offhand"
+  restoring-inventory: "6. Setting inventory"
+  restoring-xp: "7. Restoring XP"
+  xp-level: "   - Level: {level}"
+  restoring-health: "8. Restoring health"
+  restoring-hunger: "9. Restoring hunger"
+  restoring-effects: "10. Restoring effects"
+
+  data-deleted: "Data deleted"
+
+  # OpReturnCommand
+  returnback-teleporting: "returnback: Teleporting {player} to saved position:"
+  returnback-world: "  - World: {world}"
+  returnback-position: "  - Position: {x}/{y}/{z}"
+
+  # OpRestoreInventoryCommand
+  inventory-restore-start: "=== INVENTORY RESTORATION START ==="
+  inventory-restore-end: "=== INVENTORY RESTORATION END ==="
+
+  # auto_disable_vanish
+  vanish-command: "Running vanish command: {cmd}"

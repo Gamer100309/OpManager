@@ -1,0 +1,224 @@
+# ==============================
+# OpManager - Deutsche Nachrichten
+# Version 4.0
+# ==============================
+
+# Allgemeine Nachrichten
+general:
+  console-only: "§cDieser Command kann nur von Spielern ausgeführt werden!"
+  no-permission: "§cDu hast keine Berechtigung für diesen Command!"
+  reload-success: "§aOpManager wurde neu geladen!"
+
+# /opon Command
+opon:
+  already-op: "§cDu hast bereits OP!"
+  whitelist-disabled: "§cDu stehst nicht auf der Whitelist und darfst diesen Command nicht nutzen!"
+  success-full:
+    - "§a§l✓ Daten gespeichert und OP aktiviert!"
+    - "§7Inventar: §eGespeichert"
+    - "§7Rüstung & Offhand: §eGespeichert"
+    - "§7Position: §eGespeichert"
+    - "§7Gamemode: §eGespeichert"
+    - "§7XP: §eGespeichert"
+    - "§7Leben & Hunger: §eGespeichert"
+    - "§7Effekte: §eGespeichert"
+    - ""
+    - "§7Nutze §e/opoff §7um alles wiederherzustellen."
+  success-minimal:
+    - "§a§l✓ Position & Gamemode gespeichert, OP aktiviert!"
+    - "§7Position: §eGespeichert"
+    - "§7Gamemode: §eGespeichert"
+    - ""
+    - "§e⚠ Inventar-Speicherung ist deaktiviert (inventory_save: false)"
+    - "§7Nur Position und Gamemode werden bei §e/opoff §7wiederhergestellt."
+
+# /opoff Command
+opoff:
+  no-op: "§cDu hast kein OP!"
+  no-data-found:
+    - "§e⚠ Keine gespeicherten Daten gefunden!"
+    - "§7Du hast §e/opon §7nicht verwendet oder OP wurde extern gegeben."
+    - "§aOP wurde trotzdem entfernt."
+  vanish-disabled: "§7Vanish wurde deaktiviert."
+  success-full:
+    - "§a§l✓ OP entfernt und Daten wiederhergestellt!"
+    - "§7Inventar: §aWiederhergestellt"
+    - "§7Rüstung & Offhand: §aWiederhergestellt"
+    - "§7Position: §aWiederhergestellt"
+    - "§7Gamemode: §aWiederhergestellt"
+    - "§7XP: §aWiederhergestellt"
+    - "§7Leben & Hunger: §aWiederhergestellt"
+    - "§7Effekte: §aWiederhergestellt"
+  success-minimal:
+    - "§a§l✓ OP entfernt!"
+    - "§7Position: §aWiederhergestellt"
+    - "§7Gamemode: §aWiederhergestellt"
+    - ""
+    - "§e⚠ Inventar wurde nicht wiederhergestellt (inventory_save: false)"
+
+# /opreturnback Command
+returnback:
+  no-permission-whitelist: "§cDu stehst nicht auf der Whitelist und darfst diesen Command nicht nutzen!"
+  no-data:
+    - "§cKeine gespeicherten Daten gefunden!"
+    - "§7Du hast §e/opon §7nicht verwendet oder Daten wurden bereits durch §e/opoff §7gelöscht."
+  error-loading: "§cFehler beim Laden der Daten! Kontaktiere einen Administrator."
+  success:
+    - "§a✓ Du wurdest zur gespeicherten Position teleportiert!"
+    - "§7Welt: §e{world}"
+    - "§7Position: §e{x} / {y} / {z}"
+    - ""
+    - "§7Du hast noch OP. Nutze §e/opoff §7um OP zu entfernen und alles wiederherzustellen."
+
+# /opRestoreInventory Command
+restore:
+  no-op: "§cDu hast kein OP! Nutze zuerst §e/opon§c."
+  inventory-disabled:
+    - "§c⚠ Inventar-Speicherung ist deaktiviert!"
+    - ""
+    - "§7Die Config-Option §einventory_save §7ist auf §cfalse §7gesetzt."
+    - "§7Es wurden keine Inventar-Daten gespeichert."
+    - ""
+    - "§7Was gespeichert wurde:"
+    - "§7 • Position (nutze §e/opreturnback§7)"
+    - "§7 • Gamemode (wird bei §e/opoff §7wiederhergestellt)"
+  no-data:
+    - "§cKeine gespeicherten Daten gefunden!"
+    - "§7Du hast §e/opon §7nicht verwendet."
+  error-loading: "§cFehler beim Laden der Daten! Kontaktiere einen Administrator."
+  success:
+    - "§a§l✓ Inventar und Spieler-Status wiederhergestellt!"
+    - "§7Inventar: §aWiederhergestellt"
+    - "§7Rüstung & Offhand: §aWiederhergestellt"
+    - "§7XP: §aWiederhergestellt"
+    - "§7Leben & Hunger: §aWiederhergestellt"
+    - "§7Effekte: §aWiederhergestellt"
+    - ""
+    - "§7Position & Gamemode bleiben unverändert."
+    - "§7Du hast noch OP. Nutze §e/opoff §7um OP zu entfernen."
+
+# Death Event
+death:
+  warning:
+    - ""
+    - "§c§l⚠ ⚠ ⚠ ITEM-DUPLIKATION MÖGLICH ⚠ ⚠ ⚠"
+    - ""
+    - "§7Du bist während einer aktiven §eOP-Session §7gestorben!"
+    - "§7Deine Items liegen am Todespunkt:"
+    - "§e  → {world} {x} / {y} / {z}"
+    - ""
+    - "§c⚠ Wenn du §e/opoff §cnutzt UND die Items aufsammelst,"
+    - "§c⚠ werden deine Items §lDUPLIZIERT§c!"
+    - ""
+    - "§aEmpfohlene Vorgehensweise:"
+    - "§71. Nutze §e/opoff §7ZUERST (stellt deine gespeicherten Items wieder her)"
+    - "§72. Entscheide dann:"
+    - "§7   - Ignoriere die Items am Boden (§akein Duplizieren§7)"
+    - "§7   - Oder sammle sie ein (§cbewusstes Duplizieren§7)"
+    - ""
+    - "§c⚠ ZUSÄTZLICHE WARNUNG:"
+    - "§7Falls du Items von anderen Spielern eingesammelt hast,"
+    - "§7könnten diese jetzt verloren sein!"
+    - ""
+
+# Console Logs
+logs:
+  data-saved: "Daten von {player} gespeichert!"
+  data-saved-minimal: "Position & Gamemode von {player} gespeichert (inventory_save: false)"
+  data-restored: "Daten von {player} wiederhergestellt!"
+  data-restored-minimal: "Position & Gamemode von {player} wiederhergestellt (inventory_save: false)"
+  op-removed-no-data: "OP von {player} entfernt (ohne Datenwiederherstellung - keine gespeicherten Daten gefunden)"
+  returned: "{player} wurde zur gespeicherten Position teleportiert (opreturnback)"
+  inventory-restored: "Inventar-Status von {player} wiederhergestellt (opRestoreInventory)"
+  death-warning: "ITEM DUPLICATION RISK! {player} died during OP session at {world} {x}/{y}/{z}"
+  vanish-disabled: "Vanish deaktiviert für {player}"
+
+  # Storage Manager Logs:
+  data-saved-memory: "Daten von {player} im RAM gespeichert (MEMORY_ONLY)"
+  data-saved-disk: "Daten von {player} auf Disk gespeichert (DISK_ONLY)"
+  data-saved-both: "Daten von {player} in RAM & Disk gespeichert (DISK_AND_MEMORY)"
+  data-file-deleted: "Daten-Datei von {player} gelöscht"
+  storage-strategy: "Storage-Strategie: {strategy}"
+
+# Plugin Startup/Shutdown Messages
+plugin:
+  loading: "OpManager by RedCity Industries wird geladen..."
+  disk-storage-info:
+    - "Spielerdaten werden auf Festplatte gespeichert."
+    - "Dateien werden automatisch nach /opoff gelöscht."
+  started: "OpManager erfolgreich gestartet!"
+  stopping: "OpManager by RedCity Industries wird gestoppt..."
+
+# Verbose Logging (nur sichtbar wenn verbose_logging: true)
+verbose:
+  # OpOnCommand
+  save-start: "=== SPEICHERN START ==="
+  save-end: "=== SPEICHERN ENDE ==="
+  inventory-save-enabled: "inventory_save: true - Inventar wird gespeichert"
+  inventory-save-disabled: "inventory_save: false - NUR Position & Gamemode werden gespeichert"
+
+  copying-inventory: "1. Inventar wird kopiert..."
+  inventory-item-count: "   - Anzahl Items im Inventar: {count}"
+
+  copying-armor: "2. Rüstung wird kopiert..."
+  armor-helmet: "   - Helm: {type}"
+  armor-chestplate: "   - Brust: {type}"
+  armor-leggings: "   - Hose: {type}"
+  armor-boots: "   - Schuhe: {type}"
+
+  copying-offhand: "3. Offhand wird kopiert..."
+  offhand-item: "   - Offhand: {type}"
+
+  saving-xp: "4. XP wird gespeichert..."
+  xp-details: "   - Level: {level}, Exp: {exp}"
+
+  saving-health: "5. Leben wird gespeichert..."
+  health-value: "   - Health: {health}"
+
+  saving-hunger: "6. Hunger wird gespeichert..."
+  hunger-details: "   - FoodLevel: {food}, Saturation: {saturation}"
+
+  saving-effects: "7. Effekte werden gespeichert..."
+  effects-count: "   - Anzahl Effekte: {count}"
+
+  copying-location: "Position wird kopiert..."
+  location-details: "   - Position: {world} {x}/{y}/{z}"
+
+  saving-gamemode: "Gamemode wird gespeichert..."
+  gamemode-value: "   - Gamemode: {gamemode}"
+
+  creating-playerdata: "PlayerData-Objekt wird erstellt..."
+  storing-in-manager: "Im StorageManager speichern..."
+
+  # OpOffCommand
+  restore-start: "=== WIEDERHERSTELLUNG START ==="
+  restore-end: "=== WIEDERHERSTELLUNG ENDE ==="
+  restore-end-minimal: "=== WIEDERHERSTELLUNG ENDE (nur Position & Gamemode) ==="
+
+  clearing-inventory: "1. Inventar wird geleert"
+  restoring-location: "2. Position wird wiederhergestellt"
+  location-world: "   - Welt: {world}"
+  restoring-gamemode: "3. Gamemode wird wiederhergestellt"
+
+  restoring-armor: "4. Rüstung wird gesetzt"
+  restoring-offhand: "5. Offhand wird gesetzt"
+  restoring-inventory: "6. Inventar wird gesetzt"
+  restoring-xp: "7. XP wird wiederhergestellt"
+  xp-level: "   - Level: {level}"
+  restoring-health: "8. Leben wird wiederhergestellt"
+  restoring-hunger: "9. Hunger wird wiederhergestellt"
+  restoring-effects: "10. Effekte werden wiederhergestellt"
+
+  data-deleted: "Daten gelöscht"
+
+  # OpReturnCommand
+  returnback-teleporting: "returnback: Teleportiere {player} zu gespeicherter Position:"
+  returnback-world: "  - Welt: {world}"
+  returnback-position: "  - Position: {x}/{y}/{z}"
+
+  # OpRestoreInventoryCommand
+  inventory-restore-start: "=== INVENTAR-WIEDERHERSTELLUNG START ==="
+  inventory-restore-end: "=== INVENTAR-WIEDERHERSTELLUNG ENDE ==="
+
+  # auto_disable_vanish
+  vanish-command: "Führe Vanish-Befehl aus: {cmd}"
