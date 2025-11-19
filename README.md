@@ -277,7 +277,7 @@ With `inventory_save: false`:
 
 Contributions are welcome! Feel free to:
 - 🐛 Report bugs via [GitHub Issues](https://github.com/Gamer100309/OpManager/issues)
-- 💡 Suggest features via [GitHub Issues](https://github.com/Gamer100309/OpManager/issues)
+- 💡 Suggest features via [GitHub Pull requests](https://github.com/Gamer100309/OpManager/pulls)
 - 🌐 Submit translations via Pull Requests
 - 📝 Improve documentation via Pull Requests
 
@@ -300,7 +300,7 @@ This project is licensed under the **GNU General Public License v3.0**.
 - ✅ You must provide source code when distributing
 - ❌ You cannot sell this plugin without providing the source code
 
-See the [LICENSE](LICENSE.txt) file for full details or visit https://www.gnu.org/licenses/gpl-3.0.html
+See the [LICENSE](https://github.com/Gamer100309/OpManager/blob/main/LICENSE.txt) file for full details or visit https://www.gnu.org/licenses/gpl-3.0.html
 
 ---
 
