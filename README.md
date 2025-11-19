@@ -308,7 +308,6 @@ See the [LICENSE](LICENSE.txt) file for full details or visit https://www.gnu.or
 
 - **Bug Reports & Feature Requests**: [GitHub Issues](https://github.com/Gamer100309/OpManager/issues)
 - **Source Code**: [GitHub Repository](https://github.com/Gamer100309/OpManager)
-- **Discussions**: [GitHub Discussions](https://github.com/Gamer100309/OpManager/discussions)
 
 For general questions, feel free to open a discussion on GitHub!
 
